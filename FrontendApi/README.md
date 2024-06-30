@@ -34,7 +34,7 @@ Add the Azure Service Bus configuration details to `appsettings.json`.
 ### 3. Create the Service Bus Namespace
 This step only needs to be run once. If you have already ran this when following the README for the Worker microservice then disregard this step now.
 
-Create the Service Bus namespace and create the topics and subscriptions based on what you want. An included Bicep file is included in this project to help with creating the Service Bus namespace.
+Create the Service Bus namespace and create the topics and subscriptions based on what you want. A Bicep file is included in this project to help with creating the Service Bus namespace.
 
 ### 4. Build and Run
 ```bash
@@ -102,10 +102,9 @@ FrontendApi/
 2. If the message is accepted a **HTTP 202** will be received and provide a redirect URL to check the status of the request.
 3. A long poll can then be done on the redirect URL which is the status endpoint. *See API Endpoints*
 4. The message is then placed in the `request-topic` in Service Bus.
-5. The `
-6. The Worker service is a subscriber of the `request-topic` and thus picks up the message and processes it.
-7. The Worker service then puts a response message into the `response-topic` in Service Bus.
-8. The Front End API's background service is a subscriber of the `response-topic`. Once the response message is received, the message will be processed and the status will be updated for the ID. The response body of the status request will return an **HTTP 201** and provide a redirect URI. This URI is on the worker endpoint and is just used for querying the records that get created in the in memory data store with each request.
+5. The Worker service is a subscriber of the `request-topic` and thus picks up the message and processes it.
+6. The Worker service then puts a response message into the `response-topic` in Service Bus.
+7. The Front End API's background service is a subscriber of the `response-topic`. Once the response message is received, the message will be processed and the status will be updated for the ID. The response body of the status request will return an **HTTP 201** and provide a redirect URI. This URI is on the worker endpoint and is just used for querying the records that get created in the in memory data store with each request.
 
 ### Asynchronous Request Reply
 

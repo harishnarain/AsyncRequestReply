@@ -45,7 +45,7 @@ Add your Azure Service Bus connection string and topics configuration to the `ap
 ### 3. Create the Service Bus Namespace
 This step only needs to be run once. If you have already ran this when following the README for the FrontendApi then disregard this step now.
 
-Create the Service Bus namespace and create the topics and subscriptions based on what you want. An included Bicep file is included in this project to help with creating the Service Bus namespace.
+Create the Service Bus namespace and create the topics and subscriptions based on what you want. A Bicep file is included in this project to help with creating the Service Bus namespace.
 
 ### 4. Build and Run
 ```bash
