@@ -83,8 +83,7 @@ FrontendApi/
 │
 ├── Models/
 │   ├── RequestData.cs
-|   ├── RequestStatus.cs 
-|   └── ResponseData.cs
+|   └── RequestStatus.cs 
 │
 ├── Services/
 │   └── ServiceBusClientService.cs
